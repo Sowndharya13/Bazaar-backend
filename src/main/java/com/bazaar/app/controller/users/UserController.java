@@ -1,5 +1,7 @@
-package com.bazaar.app;
+package com.bazaar.app.controller.users;
 
+import com.bazaar.app.Services.users.UserService;
+import com.bazaar.app.DTO.users.Users;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

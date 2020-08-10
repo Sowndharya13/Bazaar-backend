@@ -1,4 +1,4 @@
-package com.bazaar.app;
+package com.bazaar.app.DTO.users;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

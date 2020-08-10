@@ -1,5 +1,7 @@
-package com.bazaar.app;
+package com.bazaar.app.Services.users;
 
+import com.bazaar.app.DTO.users.Users;
+import com.bazaar.app.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
