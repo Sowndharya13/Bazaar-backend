@@ -16,13 +16,18 @@ public class UserService {
     private UserRepository repo;
 
     public List<Users> getAllUsers() {
-        return repo.findAll();
+        return (List<Users>) repo.findAll();
     }
     public void save(Users user) {
         repo.save(user);
     }
     public Users get(Integer user_id) {
         return repo.findById(user_id).get();
+    }
+
+    public Users validateLoginUser(String email, String pwd) {
+        Users user = repo.validateLoginUser(email, pwd);
+        return user;
     }
 
     public void delete(Integer user_id) {

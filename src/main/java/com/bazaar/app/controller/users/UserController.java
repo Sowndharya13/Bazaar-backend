@@ -24,6 +24,14 @@ public class UserController {
 
     }
 
+    @GetMapping("/api/auth/login")
+    public Users validateLoginUser(Users users, @RequestParam String email, @RequestParam String pwd) {
+
+         Users user =  service.validateLoginUser(email, pwd);
+
+        return user;
+    }
+
     @GetMapping("/user/{user_id}")
     public ResponseEntity<Users> get(@PathVariable Integer user_id) {
         try {
