@@ -1,6 +1,8 @@
 package com.bazaar.app.controller.stores;
 
+        import com.bazaar.app.DTO.products.Products;
         import com.bazaar.app.DTO.stores.Stores;
+        import com.bazaar.app.DTO.users.Users;
         import com.bazaar.app.Services.stores.StoreService;
         import org.springframework.beans.factory.annotation.*;
         import org.springframework.http.HttpStatus;
@@ -24,9 +26,11 @@ public class StoreController {
 
     }
 
-    @GetMapping("/stpre/{store_id}")
+    @GetMapping("/store/{store_id}")
     public ResponseEntity<Stores> get(@PathVariable Integer store_id) {
         try {
+            System.out.println("Stores get by store id from controller" + store_id);
+
             Stores stores = service.get(store_id);
             return new ResponseEntity<Stores>(stores, HttpStatus.OK);
         } catch (NoSuchElementException e) {
@@ -34,8 +38,13 @@ public class StoreController {
         }
 
     }
-//    @PostMapping("/user")
-//    public void add(@RequestBody Users user) {
-//        service.save(user);
-//    }
+    @PostMapping("/store")
+    public void add(@RequestBody Stores store) {
+        service.save(store);
+        }
+    @GetMapping("/store/user/{user_id}")
+    public List<Stores> get(Users users, @PathVariable Integer user_id) {
+        System.out.println("Stores owned by  user_id id from controller" + user_id);
+        return service.getStoresOwnedByUser(user_id);
+    }
 }

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.awt.*;
 
 @Entity
 public class Stores {
@@ -12,9 +13,9 @@ public class Stores {
     private String store_type;
     private String store_category;
     private String store_description;
-    //    private image brand_logo;
+
+//    private Image brand_logo;
     private String store_location;
-    private String store_zip;
     private String store_phone ;
     private Integer user_id;
 
@@ -27,6 +28,7 @@ public class Stores {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getStore_id() {
         return store_id;
     }
@@ -45,6 +47,7 @@ public class Stores {
     public void setStore_type(String store_type) {
         this.store_type = store_type;
     }
+
 
     public String getStore_category() {
         return store_category;
@@ -68,14 +71,6 @@ public class Stores {
 
     public void setStore_location(String store_location) {
         this.store_location = store_location;
-    }
-
-    public String getStore_zip() {
-        return store_zip;
-    }
-
-    public void setStore_zip(String store_zip) {
-        this.store_zip = store_zip;
     }
 
     public String getStore_phone() {

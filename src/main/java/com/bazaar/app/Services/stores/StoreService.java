@@ -21,10 +21,13 @@ public class StoreService {
     public void save(Stores stores) {
         repo.save(stores);
     }
+
     public Stores get(Integer store_id) {
         return repo.findById(store_id).get();
     }
-
+    public List<Stores> getStoresOwnedByUser(Integer user_id) {
+        return repo.getStoresOwnedByUser(user_id);
+    }
     public void delete(Integer store_id) {
         repo.deleteById(store_id);
     }

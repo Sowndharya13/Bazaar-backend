@@ -1,6 +1,8 @@
 package com.bazaar.app.controller.products;
 
 import com.bazaar.app.DTO.products.Products;
+import com.bazaar.app.DTO.stores.Stores;
+import com.bazaar.app.DTO.users.Users;
 import com.bazaar.app.Services.products.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,4 +42,9 @@ public class ProductController {
 //    public void add(@RequestBody Users user) {
 //        service.save(user);
 //    }
+    @GetMapping("/product/store/{store_id}")
+    public List<Products> get(Stores stores, @PathVariable Integer store_id) {
+        System.out.println("Stores owned by  user_id id from controller" + store_id);
+        return service.getProductsByStore(store_id);
+    }
 }

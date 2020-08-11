@@ -27,6 +27,7 @@ public class UserController {
     @GetMapping("/api/auth/login")
     public Users validateLoginUser(Users users, @RequestParam String email, @RequestParam String pwd) {
 
+
          Users user =  service.validateLoginUser(email, pwd);
 
         return user;
@@ -42,8 +43,9 @@ public class UserController {
         }
 
     }
-//    @PostMapping("/user")
-//    public void add(@RequestBody Users user) {
-//        service.save(user);
-//    }
+    @PostMapping("/user")
+    public void add(@RequestBody Users user) {
+        service.save(user);
+    }
+
 }

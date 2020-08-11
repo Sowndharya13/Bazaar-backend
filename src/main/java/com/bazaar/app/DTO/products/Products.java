@@ -13,6 +13,17 @@ public class Products {
     private String p_description;
     //    private String p_images;
     private String p_price;
+    private Integer store_id;
+    private Integer p_available_count;
+
+    public Integer getP_available_count() {
+        return p_available_count;
+    }
+
+    public void setP_available_count(Integer p_available_count) {
+        this.p_available_count = p_available_count;
+    }
+
 
     public Products() {
         super();
@@ -59,5 +70,14 @@ public class Products {
     public void setP_price(String p_price) {
         this.p_price = p_price;
     }
+    public Integer getStore_id() {
+        return store_id;
+    }
+
+    public void setStore_id(Integer store_id) {
+        this.store_id = store_id;
+    }
+
+
 
 }
